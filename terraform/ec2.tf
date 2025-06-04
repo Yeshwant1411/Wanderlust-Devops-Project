@@ -12,6 +12,8 @@ resource "aws_default_vpc" "default" {
 
 # 3. Get default subnets in the default VPC
 data "aws_subnets" "default" {
+  depends_on = [aws_default_vpc.default]
+
   filter {
     name   = "vpc-id"
     values = [aws_default_vpc.default.id]
