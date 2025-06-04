@@ -1,6 +1,6 @@
 resource "aws_key_pair" "deployer" {
   key_name   = "terra-automate-key"
-  public_key = file("/c/Users/hi/Desktop/Devops_practice/Wanderlust-Mega-Project/terraform/terra-key.pub")
+  public_key = file("terra-key.pub")
 }
 
 resource "aws_default_vpc" "default" {
